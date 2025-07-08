@@ -27,10 +27,10 @@ docker network create php-mariadb-net
 docker run -d \
   --name mariadb \
   --network php-mariadb-net \
-  -e MYSQL_ROOT_PASSWORD=root \
-  -e MYSQL_DATABASE=unnati \
-  -e MYSQL_USER=yashraj \
-  -e MYSQL_PASSWORD=redhat \
+  -e MYSQL_ROOT_PASSWORD=yourinput \
+  -e MYSQL_DATABASE=yourinput \
+  -e MYSQL_USER=yourinput \
+  -e MYSQL_PASSWORD=yourinput \
   -v $(pwd)/init.sql:/docker-entrypoint-initdb.d/init.sql \
   mariadb:11
 
@@ -45,9 +45,9 @@ docker run -d \
   --network php-mariadb-net \
   -p 8080:80 \
   -e DB_HOST=mariadb \
-  -e DB_NAME=unnati \
-  -e DB_USER=yashraj \
-  -e DB_PASS=redhat \
+  -e DB_NAME=yourinput \
+  -e DB_USER=yourinput \
+  -e DB_PASS=yourinput \
   php-mariadb-app
 
 ## 🌐 Access the App
